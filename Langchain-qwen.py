@@ -9,31 +9,7 @@ from langchain.embeddings import HuggingFaceBgeEmbeddings
 from langchain.chains import RetrievalQA
 
 
-# def Pipei(query,role: str = "user"):
-#     # 根据提问匹配上下文
-#
-#     docs = db.similarity_search(query)
-#
-#     context = [doc.page_content for doc in docs]
-#     # print(type(context))
-#     prompt=f"已知信息:{context}\n根据已知信息回答问题:{query}"
-#
-#     print(prompt)
-#     messages = [{'role': role, 'content': query}]
-#
-#     swap = dashscope.Generation.call(
-#         dashscope.Generation.Models.qwen_turbo,
-#         messages=messages,
-#         api_key='sk-94b1cc99847749698f881326612082ca',
-#         # set the random seed, optional, default to 1234 if not set
-#         result_format='message',  # set the result to be "message" format.
-#     )
-#     print(swap)
-#     #使用 json.loads() 方法把 JSON 字符串转换成 Python 字典
-#     obj = json.loads(str(swap))
-#     # 使用点号或者方括号来访问字典的键，找到 content 键的值
-#     response = obj["output"]["choices"][0]["message"]["content"]
-#     print(response)
+
 
 
 
@@ -81,7 +57,7 @@ retriever=db.as_retriever()
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>开始对话<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
 
 query = "3月份阿根廷会来中国吗？"
-#Pipei(query)
+
 
 qa=RetrievalQA.from_chain_type(llm,chain_type="stuff",retriever=retriever)
 
