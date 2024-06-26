@@ -9,7 +9,7 @@ Python 3.10
 ```
 ```shell
 # 拉取仓库
-git clone https://github.com/jayofhust/GudaGPT.git
+git clone https://github.com/pangpang-xuan/GudaGPT.git
 ```
 ```shell
 # 安装全部依赖
